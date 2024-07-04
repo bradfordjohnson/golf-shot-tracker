@@ -1,4 +1,4 @@
-# Golf shot tracker
+# Golf Shot Tracker
 
 ## Design
 
