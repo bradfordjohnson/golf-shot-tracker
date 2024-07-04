@@ -38,6 +38,7 @@
 ### Requirements Opportunities
 
 - Adding user preferences (preferred units, measurement methods, etc.) to enhance user experience and cut down on data entry steps.
+- Feature to iterate through players in a specified order for multi-player tracking when on a course.
 
 ### Relational Data Model
 
@@ -55,7 +56,7 @@
 | Field            | Type   | Description                                  |
 | ---------------- | ------ | -------------------------------------------- |
 | `id`             | int    | primary key                                  |
-| `golfer_id`      | int    | foreign key to `golfers.id`                  |
+| `golfer_id`      | int    | foreign key to `golfers.id` (golfer who owns the club) |
 | `brand`          | string | brand name                                   |
 | `model`          | string | club model                                   |
 | `type`           | string | club type (e.g. driver, iron, wedge, putter) |
