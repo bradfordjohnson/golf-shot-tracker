@@ -1,6 +1,6 @@
 # Golf Shot Tracker
 
-## Design
+## Initial Design Thoughts
 
 ### Functional requirements
 
