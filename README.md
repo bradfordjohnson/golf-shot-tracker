@@ -80,3 +80,9 @@
 | `distance`          | int      | distance of the shot                                  |
 | `shot_type`         | string   | type of shot (drive, approach, chip)            |
 | `notes`             | string   | additional notes about the shot                       |
+
+## Notes
+
+Sources for React sidebar component:
+- https://www.youtube.com/watch?v=CXa0f4-dWi4
+- https://github.com/briancodex/react-sidebar-v1/tree/master

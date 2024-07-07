@@ -5,6 +5,7 @@ import ClubsPage from './clubsPage';
 import Navigation from './navigation';
 function App() {
   return (
+    <>
     <Router>
       <div>
         <Navigation />
@@ -14,6 +15,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </>
   );
 }
 
