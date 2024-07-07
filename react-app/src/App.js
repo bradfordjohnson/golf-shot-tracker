@@ -2,21 +2,19 @@ import React, {useState, useEffect} from 'react'
 import api from './api'
 
 const App = () => {
-  const [transactions, setTransactions] = useState ([]);
+  const [clubs, setClubs] = useState ([]);
   const [formData, setFormData] = useState({
-    amount: '',
-    category: '',
-    description: '',
-    is_income: false,
-    date: ''
+    brand: '',
+    model: '',
+    club_type: '',
   });
 
-  const fetchTransactions = async () => {
-    const response = await api.get('/transactions/');
-    setTransactions(response.data)
+  const fetchClubs = async () => {
+    const response = await api.get('/clubs/');
+    setClubs(response.data)
   };
   useEffect(() => {
-    fetchTransactions();
+    fetchClubs();
   }, []);
 
   const handleInputChange = (event) => {
@@ -30,14 +28,12 @@ const App = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    await api.post('/transactions/', formData);
-    fetchTransactions();
+    await api.post('/clubs/', formData);
+    fetchClubs();
     setFormData({
-    amount: '',
-    category: '',
-    description: '',
-    is_income: false,
-    date: ''
+    brand: '',
+    model: '',
+    club_type: ''
     });
   };
 
@@ -55,65 +51,44 @@ const App = () => {
     <div className='container'>
       <form onSubmit={handleFormSubmit}>
         <div className='mb-3 mt-3'>
-          <label htmlFor='amount' className='form-label'>
-            Amount
+          <label htmlFor='brand' className='form-label'>
+            brand
           </label>
-          <input type='text' className='form-control' id='amount' name='amount' onChange={handleInputChange} value={formData.amount}/>
+          <input type='text' className='form-control' id='brand' name='brand' onChange={handleInputChange} value={formData.brand}/>
         </div>
 
         <div className='mb-3'>
-          <label htmlFor='category' className='form-label'>
-          category
+          <label htmlFor='model' className='form-label'>
+          model
           </label>
-          <input type='text' className='form-control' id='category' name='category' onChange={handleInputChange} value={formData.category}/>
+          <input type='text' className='form-control' id='model' name='model' onChange={handleInputChange} value={formData.model}/>
         </div>
 
         <div className='mb-3'>
-          <label htmlFor='description' className='form-label'>
-          description
+          <label htmlFor='club_type' className='form-label'>
+          club_type
           </label>
-          <input type='text' className='form-control' id='description' name='description' onChange={handleInputChange} value={formData.description}/>
+          <input type='text' className='form-control' id='club_type' name='club_type' onChange={handleInputChange} value={formData.club_type}/>
         </div>
-
-        <div className='mb-3'>
-          <label htmlFor='is_income' className='form-label'>
-          Income?
-          </label>
-          <input type='checkbox' id='is_income' name='is_income' onChange={handleInputChange} value={formData.is_income}/>
-        </div>
-
-
-        <div className='mb-3'>
-          <label htmlFor='date' className='form-label'>
-          date
-          </label>
-          <input type='text' className='form-control' id='date' name='date' onChange={handleInputChange} value={formData.date}/>
-        </div>
-
-        <button type='submit' className='btn btn-primary'>
-          Submit
-        </button>
 
       </form>
 
       <table className='table table-striped table-bordered table-hover'>
         <thead>
           <tr>
-          <th>Amount</th>
-          <th>category</th>
-          <th>description</th>
+          <th>brand</th>
+          <th>model</th>
+          <th>club_type</th>
           <th>income</th>
           <th>date</th>
         </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction) =>(
+          {clubs.map((transaction) =>(
             <tr key={transaction.id}>
-              <td>{transaction.amount}</td>
-              <td>{transaction.category}</td>
-              <td>{transaction.description}</td>
-              <td>{transaction.is_income ? 'Yes': 'No'}</td>
-              <td>{transaction.date}</td>
+              <td>{transaction.brand}</td>
+              <td>{transaction.model}</td>
+              <td>{transaction.club_type}</td>
             </tr>
           ))}
         </tbody>
