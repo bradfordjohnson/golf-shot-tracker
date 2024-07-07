@@ -26,7 +26,6 @@ const App = () => {
     });
   };
 
-  // need to make the button unactive until the fields are filled out
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     await api.post('/add/club/', formData);
@@ -55,24 +54,24 @@ const App = () => {
           <label htmlFor='brand' className='form-label'>
             brand
           </label>
-          <input type='text' className='form-control' id='brand' name='brand' onChange={handleInputChange} value={formData.brand}/>
+          <input type='text' className='form-control' id='brand' name='brand' onChange={handleInputChange} value={formData.brand} required/>
         </div>
 
         <div className='mb-3'>
           <label htmlFor='model' className='form-label'>
           model
           </label>
-          <input type='text' className='form-control' id='model' name='model' onChange={handleInputChange} value={formData.model}/>
+          <input type='text' className='form-control' id='model' name='model' onChange={handleInputChange} value={formData.model} required/>
         </div>
 
         <div className='mb-3'>
           <label htmlFor='club_type' className='form-label'>
           club_type
           </label>
-          <input type='text' className='form-control' id='club_type' name='club_type' onChange={handleInputChange} value={formData.club_type}/>
+          <input type='text' className='form-control' id='club_type' name='club_type' onChange={handleInputChange} value={formData.club_type} required/>
         </div>
 
-        <button type='submit' className='btn btn-primary'>
+        <button type='submit' className='btn btn-primary' disabled={!formData.brand || !formData.model || !formData.club_type}>
           Submit
         </button>
 
