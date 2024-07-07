@@ -17,7 +17,6 @@ const App = () => {
     fetchClubs();
   }, []);
 
-  // verify if this function is needed
   const handleInputChange = (event) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
     setFormData({
