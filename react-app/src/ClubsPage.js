@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import api from './api'
 
 const ClubsPage = () => {
-  const [clubs, setClubs] = useState ([]);
+  const [clubs, setClubs] = useState([]);
   const [formData, setFormData] = useState({
     brand: '',
     model: '',
@@ -30,9 +30,9 @@ const ClubsPage = () => {
     await api.post('/add/club/', formData);
     fetchClubs();
     setFormData({
-    brand: '',
-    model: '',
-    club_type: ''
+      brand: '',
+      model: '',
+      club_type: ''
     });
   };
 
@@ -45,14 +45,14 @@ const ClubsPage = () => {
             <label htmlFor='brand' className='form-label'>
               brand
             </label>
-            <input type='text' className='form-control' id='brand' name='brand' onChange={handleInputChange} value={formData.brand} required/>
+            <input type='text' className='form-control' id='brand' name='brand' onChange={handleInputChange} value={formData.brand} required />
           </div>
 
           <div className='mb-3'>
             <label htmlFor='model' className='form-label'>
               model
             </label>
-            <input type='text' className='form-control' id='model' name='model' onChange={handleInputChange} value={formData.model} required/>
+            <input type='text' className='form-control' id='model' name='model' onChange={handleInputChange} value={formData.model} required />
           </div>
 
           <div className='mb-3'>
@@ -86,7 +86,7 @@ const ClubsPage = () => {
             </tr>
           </thead>
           <tbody>
-            {clubs.map((club) =>(
+            {clubs.map((club) => (
               <tr key={club.id}>
                 <td>{club.brand}</td>
                 <td>{club.model}</td>
@@ -95,7 +95,6 @@ const ClubsPage = () => {
             ))}
           </tbody>
         </table>
-
       </div>
     </div>
   );
