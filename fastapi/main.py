@@ -54,6 +54,14 @@ async def add_club(club: ClubsBase, db: db_dependency):
     db.refresh(db_club)
     return {"message": "Club added successfully"}
 
+@app.put("/update/club/{club_id}")
+async def update_club(club_id: int, club: ClubsBase, db: db_dependency):
+    db_club = db.query(models.Clubs).filter(models.Clubs.id == club_id).first()
+    db_club.brand=club.brand
+    db_club.model = club.model
+    db_club.club_type = club.club_type
+    db.commit()
+    return db_club
 
 @app.delete("/delete/club/")
 async def delete_club(club_id: int, db: db_dependency):
