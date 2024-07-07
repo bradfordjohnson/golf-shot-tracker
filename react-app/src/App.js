@@ -17,6 +17,7 @@ const App = () => {
     fetchClubs();
   }, []);
 
+  // verify if this function is needed
   const handleInputChange = (event) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
     setFormData({
@@ -25,10 +26,10 @@ const App = () => {
     });
   };
 
-
+  // need to make the button unactive until the fields are filled out
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    await api.post('/clubs/', formData);
+    await api.post('/add/club/', formData);
     fetchClubs();
     setFormData({
     brand: '',
@@ -43,7 +44,7 @@ const App = () => {
     <nav className='navbar navbar-dark bg-primary'>
       <div className='container-fluid'>
         <a className='navbar-brand' href="#">
-          Finance App
+          Golf Shot Tracker App
         </a>
       </div>
     </nav>
@@ -71,7 +72,13 @@ const App = () => {
           <input type='text' className='form-control' id='club_type' name='club_type' onChange={handleInputChange} value={formData.club_type}/>
         </div>
 
+        <button type='submit' className='btn btn-primary'>
+          Submit
+        </button>
+
       </form>
+
+      <br></br>
 
       <table className='table table-striped table-bordered table-hover'>
         <thead>
@@ -79,16 +86,14 @@ const App = () => {
           <th>brand</th>
           <th>model</th>
           <th>club_type</th>
-          <th>income</th>
-          <th>date</th>
         </tr>
         </thead>
         <tbody>
-          {clubs.map((transaction) =>(
-            <tr key={transaction.id}>
-              <td>{transaction.brand}</td>
-              <td>{transaction.model}</td>
-              <td>{transaction.club_type}</td>
+          {clubs.map((club) =>(
+            <tr key={club.id}>
+              <td>{club.brand}</td>
+              <td>{club.model}</td>
+              <td>{club.club_type}</td>
             </tr>
           ))}
         </tbody>
