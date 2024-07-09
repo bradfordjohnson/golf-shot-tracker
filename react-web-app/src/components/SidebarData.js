@@ -11,14 +11,14 @@ export const SidebarData = [
     },
     {
         title: 'Manage Clubs',
-        path: '/manage-clubs',
+        path: '/clubs',
         icon: <AiIcons.AiFillTool />,
         cName: 'nav-text'
     },
     {
-        title: 'Contact',
-        path: '/contact',
-        icon: <AiIcons.AiFillPhone />,
+        title: 'Record Shots',
+        path: '/shots',
+        icon: <AiIcons.AiOutlinePlus />,
         cName: 'nav-text'
     }
 ]

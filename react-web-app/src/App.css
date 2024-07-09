@@ -9,7 +9,7 @@
 
 .home,
 .clubs,
-.contact {
+.shots {
   display: flex;
   height: 90vh;
   align-items: center;

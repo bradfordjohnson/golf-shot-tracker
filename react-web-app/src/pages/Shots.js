@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Contact() {
+function Shots() {
   return (
     <div class='container'>
-      <h2>Contact</h2>
+      <h2>Shots</h2>
     </div>
   );
 }
 
-export default Contact;
+export default Shots;
