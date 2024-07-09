@@ -10,11 +10,6 @@
 .home,
 .clubs,
 .shots {
-  display: flex;
-  height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  color: #2E3440;
-  background-color: #ECEFF4;
 }

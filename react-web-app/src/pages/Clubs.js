@@ -3,7 +3,7 @@ import ClubInputForms from '../helpers/ClubInputForms';
 
 function Clubs() {
   return (
-    <div className='container'>
+    <div className='container clubs'>
       <h2>Manage Clubs</h2>
       <ClubInputForms />
     </div>
