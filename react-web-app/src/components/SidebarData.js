@@ -10,9 +10,9 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'About',
-        path: '/about',
-        icon: <AiIcons.AiFillInfoCircle />,
+        title: 'Manage Clubs',
+        path: '/manage-clubs',
+        icon: <AiIcons.AiFillTool />,
         cName: 'nav-text'
     },
     {
