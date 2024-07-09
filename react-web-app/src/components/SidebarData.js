@@ -1,5 +1,5 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa'
+// import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 
 export const SidebarData = [
@@ -12,13 +12,13 @@ export const SidebarData = [
     {
         title: 'About',
         path: '/about',
-        icon: <AiIcons.AiFillHome />,
+        icon: <AiIcons.AiFillInfoCircle />,
         cName: 'nav-text'
     },
     {
         title: 'Contact',
         path: '/contact',
-        icon: <AiIcons.AiFillHome />,
+        icon: <AiIcons.AiFillPhone />,
         cName: 'nav-text'
     }
 ]
